@@ -1,0 +1,15 @@
+/* CSS Styling for page header */
+
+.page-header {
+  height: 400px;
+  top: 120px;
+  width: 100%;
+
+  background-color: rgb(18, 142, 214);
+  text-align: center;
+  background-image: url("https://www.transparenttextures.com/patterns/brick-wall.png");
+}
+
+.profile-picture {
+  padding-top: 30px;
+}
