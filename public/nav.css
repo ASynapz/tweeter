@@ -1,0 +1,39 @@
+/* CSS Styling for the navigation bar that is fixed to the top of the page */
+
+nav {
+  justify-content: space-between;
+  display: flex;
+  font-family: 'Bungee', cursive;
+  font-weight: 400;
+  height: 120px;
+  background-color: rgb(9, 58, 104);
+  color: #ffffff;
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+  top: 0;
+  padding: 1.5em;
+  font-size: larger;
+ }
+
+ #new-tweet-nav {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: x-large;
+  float: right;
+ }
+
+.right-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.compose {
+  float: right;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  background: transparent;
+}
