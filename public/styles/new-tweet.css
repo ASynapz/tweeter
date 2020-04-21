@@ -1,0 +1,40 @@
+/* CSS styling for the new tweet form */
+
+.form-inline {
+  text-align: left;
+  position: relative;
+}
+
+.form-inline textarea {
+  background-color: #f4f1ec;
+  font-weight: bold;
+  border: none;
+  display: block;
+  border-bottom: 5px solid gray;
+  width: 100%;
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+
+.submit-tweet {
+  font-family: 'Bungee', cursive;
+  font-weight: 400;
+  padding:10px; 
+  background: darkslateblue; 
+  color: #f4f1ec;
+  border:0 none;
+  cursor:pointer;
+
+}
+
+#counter {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-family: 'Bungee', cursive;
+  font-weight: 400;
+}
+
+.error {
+  color: darkred;
+}
