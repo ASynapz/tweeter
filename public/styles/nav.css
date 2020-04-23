@@ -8,7 +8,7 @@
   font-family: 'Bungee', cursive;
   padding: 1.5em;
   background-image: url("https://www.transparenttextures.com/patterns/brick-wall.png");
-  background-color: rgb(60, 224, 170);
+  background-color: rgb(50, 98, 230);
   display: flex;
   justify-content: space-between;
 }
@@ -47,7 +47,7 @@ right: 0;
 
 @media only screen and (min-width: 1024px) {
 .nav {
-  background-color: rgb(60, 224, 170);
+  background-color: rgb(50, 98, 230);
   background-image: none;
   height: 30px;
   display: flex;
