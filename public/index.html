@@ -1,96 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="font-family: sans-serif;">
   <head>
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 
     <!-- External CSS -->
-    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css"/>
-    <script src="https://kit.fontawesome.com/7dc5befe3a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
 
-    <!--Bungee and Source Sans Pro fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:300,300i,700,700i&display=swap" rel="stylesheet">
+    <!-- Text Styles-->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bungee&display=swap" rel="stylesheet">
 
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-
-    <!--Nav Bar CSS-->
-    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />    
-
-    <!--Header CSS-->
-    <link rel="stylesheet" href="/styles/header.css" type="text/css" />  
-
-    <!--New Tweet CSS-->
-    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />    
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
     <!-- External JS -->
-    <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
-    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>    
+    <script type="text/javascript" src="/scripts/client.js" defer></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js" defer></script>
   </head>
 
   <body>
-    <!-- Top nav bar (fixed) -->
-    <nav>
-      <span>tweeter</span>
-      <div class="right-nav">
-        <span id="new-tweet-nav" ><b>Write</b> a New Tweet</span>
-        <button class="compose" type="button"><i class="fas fa-angle-double-down"></i></button>
-      </div>
-    </nav>
-
-    <div class="main-container">
-      <div class="header-container">
-    <header class="page-header">
-      <div class="profile-picture">
-        <img src="/images/profile-hex.png"> 
-      </div>
-      <div class="name">
-        <h2>Your Name</h2>
-      </div>
-    </header>
-      </div>
-
-
-    <!-- Page-specific (main) content here -->
-  <main class="container"> 
-      <section id="toggle-class" class="new-tweet">
-        <div class="alert-no-data">Please enter some data into your tweet to submit!</div>
-        <div class="alert-too-many-chars">You have too many characters!</div>
-          <form class="form-inline" action="/tweets" method="POST">
-            <textarea id="send-tweet-input" name="text" placeholder="What are you humming about?"></textarea>
-            <input class="submit-tweet" type="submit" value="Tweet">
-            <span id="counter">140</span>
-          </form>
-        </section>
     
-        <div class="tweet-column-container">
-<section id="tweets-container">
-    <article class="tweets">
-      <header>
-        <img id="avatar">
-        <div class="user-details">
-          <span id="username">Name</span>
-          <span id="userhandle">@hello</span>
+    <!-- Top nav bar (fixed) -->
+    <nav class="nav">
+      <span>Tweeter</span>
+      <button class="compose" onclick="showForm()"><span>Write a new tweet</span></button>
+    </nav>
+    <div class="desktop">
+      <header class="header">
+        <div>
+            <img class="avatar" src="/images/profile-hex.png"> 
         </div>
-
+            <h2 id="name">Your Name</h2>
       </header>
-        <p class="tweet-text"> This is the tweet</p> 
-      <footer>
-        <p id="tweet-age">10 days ago</p> 
-        <div class="icons">
-          <i class="fas fa-heart"></i> 
-          <i class="fas fa-retweet"></i>         
-          <i class="fas fa-flag"></i>          
-        </div>
-      </footer>
-    </article>      
-  </section>
+      <!-- Page-specific (main) content here -->
+      <main class="container">
+        <!-- <h2>Compose Tweet</h2> -->
+        <form action="/tweets" method="POST" class="form">
+          <section class="new-tweet">
+            <section class="err-msg1" id="errMsg" >⚠︎ You have too many thoughts!  Please shorten them. ⚠︎ </section>
+            <section class="err-msg2" id="errMsg" >⚠︎ No empty thoughts allowed! ⚠︎ </section>
+          <label class="new-tweet-title" for="tweet-text">What are you thinking about?</label>
+            <textarea class="text-tweet" name="text" id="tweet-text"></textarea>
+            <div>
+              <button class="btn" type="submit">Tweet</button>
+              <output name="counter" class="counter" id="counter" for="tweet-text">140</output>
+            </div>
+          </section>
+        </form>
+        <wbr>
+        <section class="tweets-container">
+        <!-- Database from /tweets/ gets injected here -->
+        </section>
+      </main>
     </div>
-  </main>
-  </div>
   </body>
 </html>
