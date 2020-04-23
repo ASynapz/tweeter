@@ -1,29 +1,15 @@
-//Counts the characters in the tweet
-
-const charCounter = function() {
-
-  const maxLength = 140;
-
-  // Uses keydown to count each time a key is pressed, and subract one from the character count on the creat tweet form each time
-
-  $("#send-tweet-input").on("input",function() {
-
-    let tweetLength = $(this).val().length;
-    tweetLength = maxLength - tweetLength;
-    let $counter = $(this).siblings("span");
-    $counter.text(tweetLength);
-
-    if (tweetLength < 0) {
-      $counter.addClass("error");
+ 
+$().ready(function() {
+  $("#tweet-text").on("input", () => {
+    let number = Number($("#counter").text());
+    let chars = document.getElementById("tweet-text").value;
+    let numOfChars = chars.length;
+    number = +numOfChars;
+    $("#counter").text(140 - number);
+    if (140 - number < 0) {
+      document.getElementById("counter").style.color = "red";
     } else {
-      $counter.removeClass("error");
+      document.getElementById("counter").style.color = "gray";
     }
   });
-};
-
-
-//Waits until the document is loaded to execute the code
-
-$(document).ready(function() {
-  charCounter();
 });
