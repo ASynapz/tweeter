@@ -3,7 +3,7 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
-html {
+ html {
   box-sizing: border-box;
 }
 *, *:before, *:after {
@@ -15,143 +15,110 @@ html {
  */
 
 body {
-  color: #54494e;
+  color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Source Sans Pro';
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
- /* Styling for a screen below 1024px */
-
-main {
+ .container {
+  margin: auto;
+  background-color:#f4f1ec ;
   text-align: center;
-  margin-left: 5%;
-  margin-right: 5%;
+  width: 90%;
+ }
+
+ article {
+  border: 3px solid gray;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  height: auto;
+  padding: 15px;
+  font-family: 'Source Sans Pro';
 }
 
-.main-container {
-  display: flex;
-  flex-direction: column;
-  margin-top: 120px;
-}
-
-
-/* Styling for a screen that is over 1024px, everything outside of this is used for all devices */
-
-@media only screen and (min-width: 1024px) {
-
-  .main-container {
-    display: flex;
-    flex-direction: row;
-  }
-
-  .header-container {
-    width: 40%;
-    margin-left: 5%;
-    margin-top: 100px;
-  }
-
-  .container {
-    width: 60%;
-  }
-}
-
-/* Styling for all elements used by any screen size*/
-
-.new-tweet {
-  display: none;
-}
-
-.alert-no-data {
-  margin-left: 25%;
-  margin-right: 25%;
-  opacity: 0.7;
-  border-radius: 20px;
-  display: none;
-  padding: 20px;
-  background-color: #f44336; /* Red */
-  color: white;
-  margin-bottom: 15px;
-}
-
-.alert-too-many-chars {
-  margin-left: 25%;
-  margin-right: 25%;
-  opacity: 0.7;
-  border-radius: 20px;
-  display: none;
-  padding: 20px;
-  background-color: #f44336; /* Red */
-  color: white;
-  margin-bottom: 15px;
-}
-
-.tweets {
+.tweet-header {
   text-align: left;
-  width: 100%;
-  border: darkslategray solid 3px;
-  padding: 0.5em;
-  margin-top: 100px;
-  margin-bottom: 2em;
+  padding-bottom: 20px;
 }
 
-.tweets header {
-  display: flex;
-  align-items: center;
-  width: 100%;
+.tweet-header img {
+  width: 70px;
+  height: 70px;
+  float: left;
+  display: block;
+  padding-right: 5px
 }
 
-.tweets header .user-details {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-.tweets footer {
-  width: 100%;
-  border-top:  darkslategray solid 3px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.tweets #avatar {
-  margin-right: 10px;
-}
-
-footer .icons {
-  margin-top: 16px;
-  display: none;
-}
-
-.tweet-text {
-  font-size: larger;
-  word-wrap: break-word;
-}
-
-#name {
-  font-size: large;
-}
-
-#tweet-age {
-  font-size: medium;
-}
-
-#userhandle {
+.handle {
   float: right;
   display: none;
 }
 
-article:hover .icons {
-  margin-top: 16px;
-  display: block;
-}
-article:hover #userhandle {
-  display: block;
+.tweet-main {
+  margin: auto;
+  border-bottom: 3px solid gray;
+  width: 100%;
+  padding-bottom: 5px;
+  padding-top: 30px;
+  text-align: left;
 }
 
+.text {
+  padding: 2px;
+  overflow-wrap: break-word;
+}
+
+.tweet-footer {
+  margin: auto;
+  font-size: small;
+  text-align: left;
+  padding: 10px;
+}
+
+.social img {
+  width: 25px;
+  height: 25px;
+  float: right;
+  padding: 2px;
+  display: none;
+}
+
+#errMsg {
+  display: none;
+  color: red;
+  border: solid 3px red;
+  padding: 10px;
+}
+
+.header {
+  padding-top: 30px;
+}
+
+/* Hover effects for handle and social images.*/
 article:hover {
-  box-shadow: 10px 10px 5px grey;
+  box-shadow: 5px 5px rgba(2, 2, 2, 0.473);
+  text-shadow: 0.35px 0.35px;
+}
+
+article:hover .handle {
+  display: inline
+}
+
+article:hover .social img {
+  display: inline
+}
+
+/* Laptops / Desktops: minimum width of 1024px */
+@media only screen and (min-width: 1024px) {
+   .container {
+    flex-direction: column;
+    text-align: center;
+    padding-right: 50px;
+    max-width: 800px;
+  }
 }

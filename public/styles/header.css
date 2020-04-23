@@ -1,15 +1,36 @@
-/* CSS Styling for page header */
-
-.page-header {
+.header {
   height: 400px;
-  top: 120px;
   width: 100%;
-
-  background-color: rgb(224, 226, 74);
   text-align: center;
-  background-image: url("https://www.transparenttextures.com/patterns/bright-squares.png");
+  background-color: rgb(75, 64, 235);
+  background-image: url("https://www.transparenttextures.com/patterns/brick-wall.png");
+  margin-top: 120px;
+  color: white;
 }
 
-.profile-picture {
-  padding-top: 30px;
+@media only screen and (min-width: 1024px) {
+  .header {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex: 1;
+      margin-top: 100px;
+      margin-left: 50px;
+      margin-right: 100px;
+      height: 300px;
+  }
+
+  .header img {
+      width: 200px;
+      height: 200px;
+  }
+  
+  .header h2 {
+      margin-top: 0px
+  }
+
+  .desktop {
+      display: flex;
+      padding-top: 50px;
+  }
 }

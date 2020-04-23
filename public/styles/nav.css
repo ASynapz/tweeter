@@ -1,39 +1,57 @@
-/* CSS Styling for the navigation bar that is fixed to the top of the page */
-
-nav {
-  justify-content: space-between;
-  display: flex;
-  font-family: 'Bungee', cursive;
-  font-weight: 400;
-  height: 120px;
-  background-color: rgb(218, 152, 66);
-  color: #ffffff;
+.nav {
   position: fixed;
-  z-index: 9999;
   width: 100%;
   top: 0;
+  height: 120px;
+  color: #FFFFFF;
+  z-index: 1;
+  font-family: 'Bungee', cursive;
   padding: 1.5em;
-  font-size: larger;
- }
-
- #new-tweet-nav {
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: x-large;
-  float: right;
- }
-
-.right-nav {
+  background-image: url("https://www.transparenttextures.com/patterns/brick-wall.png");
+  background-color: rgb(60, 224, 170);
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+}
+.compose {
+background-color: none;
+color: white;
+border: none;
+cursor: pointer;
+display: contents;
 }
 
-.compose {
-  float: right;
-  border: none;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  background: transparent;
+/* For the hover over affect on the compose button. Buttom shift left and down arrow appears */
+.compose span {
+display: inline-block;
+position: relative;
+transition: 1s;
+}
+
+.compose span:after {
+content: '\2193';
+position: absolute;
+opacity: 0;
+top: 0;
+right: -20px;
+transition: 1s;
+}
+
+.compose:hover span {
+padding-right: 25px;
+}
+
+.compose:hover span:after {
+opacity: 1;
+right: 0;
+}
+
+@media only screen and (min-width: 1024px) {
+.nav {
+  background-color: rgb(60, 224, 170);
+  background-image: none;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
 }

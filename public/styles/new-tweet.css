@@ -1,40 +1,44 @@
-/* CSS styling for the new tweet form */
-
-.form-inline {
-  text-align: left;
-  position: relative;
-}
-
-.form-inline textarea {
-  background-color: #f4f1ec;
-  font-weight: bold;
-  border: none;
-  display: block;
-  border-bottom: 5px solid gray;
+.new-tweet {
+  margin: auto;
+  text-align: center;
   width: 100%;
-  margin-top: 60px;
-  margin-bottom: 20px;
+  padding-bottom: 50px;
 }
 
-.submit-tweet {
-  font-family: 'Bungee', cursive;
-  font-weight: 400;
-  padding:10px; 
-  background: rgb(218, 152, 66);
-  color: #f4f1ec;
-  border:0 none;
-  cursor:pointer;
-
+.new-tweet-title {
+ float: left;
+}
+/* Counter initially starts off gray. */
+.counter {
+  text-align: right;
+  font-family: "bungee";
+  color: gray;
+  float: right;
 }
 
-#counter {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  font-family: 'Bungee', cursive;
-  font-weight: 400;
+.btn {
+  font-family: "bungee";
+  background-color: #4056A1;
+  color: #ffffff;
+  float: left;
 }
 
-.error {
-  color: darkred;
+.text-tweet {
+  border: none;
+  border-bottom: 3px solid gray;
+  background: none;
+  width: 100%;
+  resize: none;
+  outline: none;
+}
+
+.text-tweet:focus {
+  border: 3px solid gray;
+  -webkit-transition: 0.5s;
+  transition: 0.25s;
+}
+
+.form {
+  display: none;
+  margin-top: 100px;
 }
